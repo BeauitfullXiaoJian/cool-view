@@ -1,5 +1,5 @@
 ---
-title: Angular Component Note-2
+title: angular component note-2
 date: 2018-07-06 14:06:49
 tags: Angular
 ---
@@ -215,5 +215,7 @@ export class AppComponent {
 
 <div class="tip">相关参考文档地址
     https://angular.cn/guide/component-interaction
+代码下载
+<a href="/codes/component-simple-2.zip">component-simple-2.zip</a>
 </div>
 

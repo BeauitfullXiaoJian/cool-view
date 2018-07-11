@@ -1,5 +1,5 @@
 ---
-title: Angular Component Note-1
+title: angular component note-1
 date: 2018-07-06 11:00:46
 tags: Angular
 ---
@@ -231,6 +231,8 @@ c. 在组件模版中加入`<ng-content>`标签，你将会发现progressValue�
 ```
 ![进度条](/images/ng-note-component/progress-value.png)
 <div class="tip">相关参考文档地址
-    https://angular.cn/api/core/Component
+https://angular.cn/api/core/Component
+代码下载
+<a href="/codes/component-simple-1.zip">component-simple-1.zip</a>
 </div>
 
