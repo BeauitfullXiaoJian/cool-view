@@ -1,7 +1,7 @@
 ---
 title: animate.css
 date: 2018-07-10 20:26:55
-tags: css sass animate.css
+tags: css
 ---
 #### 描述（来源animate.css github 说明）
 animate.css 是一个非常强大，有趣，兼容性很好动画库。适合用在需要给死气沉沉的页面添上活力，更引人注目！
