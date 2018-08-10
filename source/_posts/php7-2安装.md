@@ -51,3 +51,8 @@ sudo apt-get install php7.2-phpdbg
 sudo apt-get install php7.2-snmp       
 sudo apt-get install php7.2-tidy       
 sudo apt-get install php7.2-zip
+
+#### 运行/重启/关闭php7.2-fpm
+`service php7.2-fpm start`
+`service php7.2-fpm restart`
+`service php7.2-fpm stop`

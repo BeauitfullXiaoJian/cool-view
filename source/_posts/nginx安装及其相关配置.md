@@ -128,3 +128,29 @@ tags: nginx
 #失败的请求，服务器错误，启动记录都会在文件中记录
 ...内容略...
 ```
+
+#### ubuntu16.04 环境配置
+1. 站点配置目录`/etc/nginx/site-enable`
+2. 全局配置 `/etc/nginx/nginx.conf`(开启gzip)
+3. 其它相关公共配置`/etc/nginx/snippets/snakeoil.conf`(https)
+
+##### https部署---默认http跳转到https
+```conf
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+    location / {
+        rewrite ^(.*)$ https://$host$request_uri permanent;
+    }
+}
+```
+##### https部署---https服务器校验
+```conf
+location /.well-known/acme-challenge {
+    alias /tmp/acme-wellknown;
+}
+```
+##### https部署---克隆证书获取工具
+1. [Let's Encrypt](https://letsencrypt.org)
+2. [Dehydrated](https://github.com/lukas2511/dehydrated)
