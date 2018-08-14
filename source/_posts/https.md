@@ -1,13 +1,13 @@
 ---
 title: https证书获取与配置（nginx）
 date: 2018-08-14 15:04:35
-tags: nginx,https
+tags: [nginx,https]
 ---
 
 #### 使用git克隆项目到`/var/www`目录下
 1. Clone with SSH : git@github.com:lukas2511/dehydrated.git
 2. Clone with SSH : https://github.com/lukas2511/dehydrated.git
-[Github地址](https://github.com/lukas2511/dehydrated)
+3. [Github地址](https://github.com/lukas2511/dehydrated)
 
 #### 把克隆好的项目中docs/examples/目录中的config,domains.txt,hook.sh复制到项目的根目录（项目指代的是克隆下来的dehydrated）
 1. 如果你会修改config参数，可以自行取消相关注释修改相关参数
@@ -126,7 +126,7 @@ server {
         }
 }
 ```
-把注释去掉，并写注释掉80端口的相关配置，如下，就好了
+3. 把注释去掉，并写注释掉80端口的相关配置，如下，就好了
 ```conf
 server {
         # listen 80;
