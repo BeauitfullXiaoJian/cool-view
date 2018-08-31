@@ -28,7 +28,7 @@ chmod -R 777 $WELLKNOWN
 ```
 
 3. 修改domains.txt(如果你会改，那么自己改...),清空里面的内容，写入下面内容
-```'
+```conf
 # 每一个子域名都写在后面，域名之间空一格就好（这些域名是你要配置https的域名，如果以后多了，可以继续后面加）
 cool1024.com blog.cool1024 www.cool1024.com
 
@@ -42,6 +42,10 @@ deploy_cert() {
     # 拷贝证书文件到项目根目录的certs文件夹下
     cp "${KEYFILE}" "${BASEDIR}/certs/"
     cp "${FULLCHAINFILE}" "${BASEDIR}/certs/";
+    # 重启服务器
+    nginx -s reload
+    # 记录日志
+    echo [`date`]执行结束 >> "${BASEDIR}/certs/log.txt"
 }
 ```
 
@@ -163,6 +167,25 @@ server {
 }
 ```
 
+4. 定时任务
+ * 打开控制台，输入 `crontab -e`
+ * 按下 i 进入编辑模式
+ * 任务书写格式如下
+ ```
+ * * * * * *
+第1个星号表示分钟（0－59）
+第2个星号表示小时（0－23）
+第3个星号表示日期（0－31）
+第4个星号表示月份（0－12）
+第5个星号表示星期几（0－6，0是周日，6是周六）
+第6个星号表示要执行的脚本文件名。
+
+示例：
+*/1 * * * * 1分钟一次
+0 13 * * * 表示每天下午13点执行
+30 * * * * 表示每30分钟执行
+ ```
+例子：`59 23 * * * /var/www/letsencrypt.sh/dehydrated -c`
 <div class="tip">
 1. 证书颁发机构官网[Let's Encrypt](https://letsencrypt.org)
 2. 证书有效期为3个月，我们要在快要过期的时候获取一个新的（只需要重新执行./dehydrated -c）
