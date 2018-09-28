@@ -85,10 +85,3 @@ export PATH=$ANDROID_HOME/tools:$PATH
 2. `cordova create myApp` 创建项目
 3. `cordova platform add android` 添加android平台
 4. `cordova bulid android` 打包apk
-
-
-
-
-
-
-
