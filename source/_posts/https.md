@@ -6,7 +6,7 @@ tags: [nginx,https]
 
 #### 使用git克隆项目到`/var/www`目录下
 1. Clone with SSH : git@github.com:lukas2511/dehydrated.git
-2. Clone with SSH : https://github.com/lukas2511/dehydrated.git
+2. Clone with HTTPS : https://github.com/lukas2511/dehydrated.git
 3. [Github地址](https://github.com/lukas2511/dehydrated)
 
 #### 把克隆好的项目中docs/examples/目录中的config,domains.txt,hook.sh复制到项目的根目录（项目指代的是克隆下来的dehydrated）
