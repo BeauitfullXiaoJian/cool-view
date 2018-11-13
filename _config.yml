@@ -56,7 +56,7 @@ category_map:
 tag_map:
 
 live2d:
-  enable: true
+  enable: false
   scriptFrom: local
   pluginRootPath: live2dw/
   pluginJsPath: lib/
