@@ -7,6 +7,25 @@ tags: ['nginx','flv']
 ### 中文文档地址
 http://www.nginx.cn/doc/optional/flv.html
 
+### nginx更高版本安装
+1. 添加源
+```sh
+echo deb http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.list
+
+echo deb-src http://nginx.org/packages/ubuntu/ trusty nginx >> /etc/apt/sources.list
+```
+2. 添加key
+```sh
+wget http://nginx.org/keys/nginx_signing.key && apt-key add nginx_signing.key
+```
+
+3. 更新并安装
+```sh
+apt-get update
+
+apt-get install nginx
+```
+
 ### nginx配置（1.4.2版本及以上)
 
 说明: 本模块必需在编译nginx时加上--with-http_flv_module.
