@@ -150,4 +150,6 @@ public class FlvFragment extends Fragment implements SurfaceHolder.Callback{
 1. 视频可以随意切换播放进度，但是大视频会卡顿，切换进度过大也会卡顿。
 2. 需要事先把媒体文件转换为flv格式，可以使用ffmpeg
 `ffmpeg -i live.mp4 -vcodec libx264 -c:a aac live.flv`
-3. ffserver也支持，当是这个模块已经从ffmpeg仓库中移除
+3. 需要关键帧数据
+`ffmpeg -i live.mp4 -vcodec libx264 -c:a aac -flvflags add_keyframe_index live.flv`
+4. ffserver也支持，当是这个模块已经从ffmpeg仓库中移除
