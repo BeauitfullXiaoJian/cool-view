@@ -8,7 +8,7 @@ tags: ffmpeg
 参考格式
 `ffmpeg -i 要切割的视频.flv -threads [线程数量] -vcodec copy -f segment -segment_time [片段时间-秒] [输出文件]`
 例子，我们把origin.flv文件按60秒间隔进行切割，结果输出到output文件夹中，%04d为4位数（如果不够会补0，如0001）,使用了4个线程，注意output这个目录必须先创建
-`fmpeg -i origin.flv -threads 4 -vcodec copy -f segment -segment_time 60 ./output/%04d.flv`
+`ffmpeg -i origin.flv -threads 4 -vcodec copy -f segment -segment_time 60 ./output/%04d.flv`
 
 2. 碎片信息获取
 每个视频的时间长度是不一样的，跳转进度的时候需要根据具体时间推算出应该加载的碎片
