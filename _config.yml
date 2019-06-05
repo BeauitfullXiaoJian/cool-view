@@ -56,7 +56,7 @@ category_map:
 tag_map:
 
 live2d:
-  enable: false
+  enable: true
   scriptFrom: local
   pluginRootPath: live2dw/
   pluginJsPath: lib/
@@ -65,8 +65,8 @@ live2d:
     use: live2d-widget-model-koharu
   display:
     position: left
-    width: 150
-    height: 300
+    width: 80
+    height: 160
   mobile:
     show: false
 
@@ -81,7 +81,7 @@ twitter:
 rss: 
 weibo: 
 instagram: 
-github: BeauitfullXiaoJian
+github: cool1024
 facebook: 
 
 # Comment
