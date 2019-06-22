@@ -1,5 +1,9 @@
 # cool-view
 
+## Install
+* `npm i`
+* 安装主题 `git clone https://github.com/Ben02/hexo-theme-Anatole.git themes/anatole`
+
 ## add article
 `hexo new`
 
