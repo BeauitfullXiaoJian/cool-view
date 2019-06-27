@@ -4,8 +4,6 @@ date: 2019-02-02 18:11:53
 tags: androidx
 ---
 
-
-# AndroidX概述
 AndroidX是Android团队为Android Jetpack开发，测试，打包，发布和发布库的开源项目 。
 
 AndroidX是对原始Android支持库的重大改进 。与支持库一样，AndroidX与Android操作系统分开提供，并提供跨Android版本的向后兼容性。AndroidX通过提供功能奇偶校验和新库完全取代了支持库。此外，AndroidX还包括以下功能：
