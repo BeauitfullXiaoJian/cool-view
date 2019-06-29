@@ -7,9 +7,9 @@ tags: ["android","jetpack"]
 ##### 相关参考
 * [IBM Developer](https://www.ibm.com/developerworks/cn/opensource/os-cn-sqlite/index.html)
 * [使用SQLite保存数据](https://developer.android.google.cn/training/data-storage/sqlite?hl=en)
+* [使用Room保存数据到本地数据库](https://developer.android.google.cn/training/data-storage/room)
 
 ##### SQLite
-
 SQLite 是一个软件库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。SQLite 是在世界上最广泛部署的 SQL 数据库引擎。SQLite 源代码不受版权限制。就像其他数据库，SQLite 引擎不是一个独立的进程，可以按应用程序需求进行静态或动态连接。SQLite 直接访问其存储文件。
 
 ##### Android中的SQLite使用
@@ -17,6 +17,7 @@ SQLite 是一个软件库，实现了自给自足的、无服务器的、零配�
 Android 在运行时（run-time）集成了 SQLite，所以每个 Android 应用程序都可以使用 SQLite 数据库。对于熟悉 SQL 的开发人员来时，在 Android 开发中使用 SQLite 相当简单。但是，由于 JDBC 会消耗太多的系统资源，所以 JDBC 对于手机这种内存受限设备来说并不合适。因此，Android 提供了一些新的 API 来使用 SQLite 数据库;
 
 * 数据库存储在 data/< 项目文件夹 >/databases/ 下。
+![文件预览](/images/jetpack/android-sqlite.png)
 
 
 ##### 例子，把接口数据缓存到SQLite中
@@ -198,12 +199,20 @@ class AppSQLiteHelp(context: Context) :
 
 Room是一个数据持久化的库,它使您可以更轻松地在应用程序中使用SQLiteDatabase对象，减少样板代码的数量并在编译时验证SQL查询。Room在SQLite上提供了一个抽象层，提供了更强大的数据库访问，同时充分使用了SQLite能力。Room可帮助运行应用程序的设备上创建应用程序数据的缓存。此缓存对于应用程序是唯一的，允许用户在应用程序中查看数据的副本，无论用户是否连接到了网络。
 
-1. 在app/build.gradle中配置
+0. 直接使用SQLite弊端--->Room的优势
+ * 必须写大量的**样版代码**  --->  减少样板代码
+ * 没有直接的**对象映射**    --->  编译时校验查询，生成对应的关系对象
+ * 很难实现**数据库迁移**    --->  轻松实现迁移
+ * 很难测试                --->  高度的可测试性
+ * 不小心在**主线程**上执行长时间的数据库操作 --->  保持数据库远离主线程
+
+1. 在app/build.gradle中配置,此处为kotlin的导入，详情请查看[更多参考地址](https://developer.android.google.cn/jetpack/androidx/releases/room/)
 ```Gradle
-def room_version = '2.1.0-beta02'
-implementation "android.arch.persistence.room:runtime:$room_version"
-annotationProcessor "android.arch.persistence.room:compiler:$room_version"
-androidTestImplementation "android.arch.persistence.room:testing:$room_version"
+def room_version = '2.1.0'
+implementation "androidx.room:room-runtime:$room_version"
+implementation "androidx.room:room-ktx:$room_version"
+kapt "android.arch.persistence.room:compiler:$room_version"
+
 ```
 
 2. Entity(实列)
@@ -217,34 +226,135 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "api_data")
 data class ApiSaveData(
 
-    @PrimaryKey()
-    @ColumnInfo(name = "id")
-    private var id: Int,
+    // @ColumnInfo(name = "id")
+    @PrimaryKey
+    var id: Int? = null,
 
     @ColumnInfo(name = "api_name")
-    private var apiName: String,
+    val apiName: String?,
 
     @ColumnInfo(name = "api_param_hash")
-    private var hashCode: Int,
+    val paramHash: Int?,
+
+    @ColumnInfo(name = "api_data")
+    val apiData: String?,
 
     @ColumnInfo(name = "save_time")
-    private var saveTime: Int,
+    val saveTime: Long?,
 
     @ColumnInfo(name = "lost_time")
-    private var lostTime: Int
-
+    val lostTime: Long?
 )
 ```
 3. Dao(数据访问对象)
 ```Kotlin
 ...
 
+import androidx.room.Dao
 import androidx.room.Query
+import com.example.androidx_example.entity.ApiSaveData
 
-interface ApiSaveDataDao<ApiSaveData> {
-    @Query("select * from api_data where api_name = :apiName and api_param_hash = :hashCode and lost_time > :currentTime")
-    fun findSaveData(apiName: String, hashCode: Int, currentTime: Long = System.currentTimeMillis())
+@Dao
+interface ApiSaveDataDao : BaseDao<ApiSaveData> {
+    @Query("select api_data from  api_data where api_name = :apiName and api_param_hash = :hashCode and lost_time > :currentTime")
+    fun findSaveData(apiName: String, hashCode: Int, currentTime: Long = System.currentTimeMillis()): String?
+}
+
+/**
+ * BaseDao 声明了一些常用的方法，避免重复写样板代码
+ */
+interface BaseDao<T> {
+
+    /**
+     * Insert an object in the database.
+     *
+     * @param obj the object to be inserted.
+     */
+    @Insert
+    fun insert(obj: T)
+
+    /**
+     * Insert an array of objects in the database.
+     *
+     * @param obj the objects to be inserted.
+     */
+    @Insert
+    fun insert(vararg obj: T)
+
+    /**
+     * Update an object from the database.
+     *
+     * @param obj the object to be updated
+     */
+    @Update
+    fun update(obj: T)
+
+    /**
+     * Delete an object from the database
+     *
+     * @param obj the object to be deleted
+     */
+    @Delete
+    fun delete(obj: T)
+
 }
 ```
 
-...未完待续... 
+4. 数据库对象
+```Kotlin
+...
+
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import com.example.androidx_example.entity.ApiSaveData
+
+@Database(entities = [ApiSaveData::class], version = 1, exportSchema = false)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun apiSaveDataDao(): ApiSaveDataDao
+}
+```
+
+5. 单例模式，获取数据库对象
+```Kotlin
+...
+
+import androidx.room.Room
+import com.example.androidx_example.App
+import com.example.androidx_example.dao.AppDatabase
+
+object RoomUntil {
+
+    lateinit var db: AppDatabase
+        private set
+
+    fun initDB() {
+        if (!this::db.isInitialized) {
+            db = Room.databaseBuilder(
+                App.instance,
+                AppDatabase::class.java, SQLiteUntil.DATABASE_NAME
+            ).build()
+        }
+    }
+}
+```
+
+6. 使用
+```Kotlin
+RoomUntil.initDB()
+
+// 查询指定接口的缓存数据
+val saveDataStr = RoomUntil.db.apiSaveDataDao()
+    .findSaveData("接口名称", 432143242134809)
+
+// 保存缓存数据--这里的insert来自BaseDao
+ RoomUntil.db.apiSaveDataDao()
+    .insert(
+        ApiSaveData(
+            apiName = apiName,
+            paramHash = params.hashCode(),
+            apiData = it.getStringData(),
+            saveTime = currentTime,
+            lostTime = currentTime + (1000 * 60 * 60)
+        )
+    )
+```
