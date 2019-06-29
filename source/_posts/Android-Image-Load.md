@@ -128,34 +128,5 @@ val bmp = bitmapRegionDecoder.decodeRegion(Rect(0, 0, 40, 40), options)
 
 ```
 
-##### Res中的图像资源
-
-**Drawable(可绘制对象资源)** [Android参考文档](https://developer.android.com/guide/topics/resources/drawable-resource)
-可在屏幕上绘制的图形，以及可以使用 getDrawable(int) 等 API 检索或者应用到具有 android:drawable 和 android:icon 等属性的其他 XML 资源的图形。共有多种不同类型的可绘制对象
-
-* 位图 .png、.jpg 或 .gif 对应 BitmapDrawable
-* 九宫格文件 具有可拉伸区域的 PNG 文件，允许根据内容调整图像大小 (.9.png) 对应 NinePatchDrawable
-* 图层列表 对应 LayerDrawable,是管理其他可绘制对象阵列的可绘制对象。列表中的每个可绘制对象按照列表的顺序绘制，列表中的最后一个可绘制对象绘于顶部。
-* 状态列表 此 XML 文件为不同状态引用不同位图图形（例如，按下按钮时使用不同的图像）。创建 StateListDrawable。
-* 级别列表 此 XML 文件用于定义管理大量备选可绘制对象的可绘制对象，每个可绘制对象都分配有最大的备选数量。创建 LevelListDrawable。
-* 转换可绘制对象 此 XML 文件用于定义可在两种可绘制对象资源之间交错淡出的可绘制对象。创建 TransitionDrawable。
-* 插入可绘制对象 此 XML 文件用于定义以指定距离插入其他可绘制对象的可绘制对象。当视图需要小于视图实际边界的背景可绘制对象时，此类可绘制对象很有用。
-* 裁剪可绘制对象 此 XML 文件用于定义对其他可绘制对象进行裁剪（根据其当前级别值）的可绘制对象。创建 ClipDrawable。
-* 缩放可绘制对象 此 XML 文件用于定义更改其他可绘制对象大小（根据其当前级别值）的可绘制对象。创建 ScaleDrawable
-* 形状可绘制对象 此 XML 文件用于定义几何形状（包括颜色和渐变）。创建 ShapeDrawable。
-<div class="tip tip-info">注：颜色资源也可用作 XML 中的可绘制对象。例如，在创建状态列表可绘制对象时，可以引用 android:drawable 属性的颜色资源 (android:drawable="@color/green")。
-</div>
-
-**DPI对应的范围**
-[参考csdn博客](https://www.cnblogs.com/huihuizhang/p/9473698.html)
-| dip范围| 级别| 建议图标尺寸|
-| ------------- |:-------------:|-------------:|
-|0dpi ~ 120dpi| ldpi|
-|120dpi ~ 160dpi|	mdpi|48 * 48|
-|160dpi ~ 240dpi|	hdpi|72 * 72|
-|240dpi ~ 320dpi|	xhdpi|96 * 96|
-|320dpi ~ 480dpi|	xxhdpi|144 * 144|
-|480dpi ~ 640dpi|	xxxhdpi|192 * 192|
-
 <div class="tip tip-info">注意：有几个库遵循加载图像的最佳实践。您可以在应用中使用这些库以最优化的方式加载图像。我们建议使用 Glide 库，尽可能快速，平稳地加载和显示图像。其他受欢迎的图像加载库包括Square的Picasso和 Facebook的Fresco。这些库简化了与Android上的位图和其他类型图像相关的大多数复杂任务。
 </div>
