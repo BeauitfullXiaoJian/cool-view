@@ -1,8 +1,12 @@
 ---
-title: jetpack-room
+title: JetPack-Room预览
 date: 2019-06-29 11:37:36
 tags: ["android","jetpack"]
+categories: Android开发
 ---
+
+Room是一个数据持久化的库,它使您可以更轻松地在应用程序中使用SQLiteDatabase对象，减少样板代码的数量并在编译时验证SQL查询。Room在SQLite上提供了一个抽象层，提供了更强大的数据库访问，同时充分使用了SQLite能力。Room可帮助运行应用程序的设备上创建应用程序数据的缓存。此缓存对于应用程序是唯一的，允许用户在应用程序中查看数据的副本，无论用户是否连接到了网络。
+<!-- more -->
 
 ##### 相关参考
 * [IBM Developer](https://www.ibm.com/developerworks/cn/opensource/os-cn-sqlite/index.html)

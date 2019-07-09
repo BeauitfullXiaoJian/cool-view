@@ -1,12 +1,14 @@
 ---
-title: Rxjs笔记
+title: RxJS笔记
 date: 2018-11-28 16:32:00
 tags: rxjs
+categories: Web开发
 ---
 
 #### 概览
 RxJS 是使用 Observables 的响应式编程的库，它使编写异步或基于回调的代码更容易。
 [官方文档](https://rxjs-dev.firebaseapp.com)
+<!-- more -->
 
 #### 安装
 1. `npm install rxjs`
@@ -209,5 +211,3 @@ intervel(1000)
     console.log(res);
 });
 ```
-
-#### 实践：写一个智能查询的可观察对象

@@ -2,11 +2,13 @@
 title: MySQL主从同步
 date: 2018-09-28 15:54:03
 tags: mysql
+categories: 数据库
 ---
 
 #### 主从同步
 
 一个主数据库（Master），多个从数据库(Slave)。主数据库数据变更同步到下面所有的从服务器。
+<!--more-->
 
 #### Master配置--配置文件
 1. 开启二进制日志文件(修改/etc/mysql/mysql.conf.d/mysqld.cnf)

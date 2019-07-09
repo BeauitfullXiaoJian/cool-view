@@ -2,8 +2,8 @@
 title: cool1024
 subtitle:
 description: cool1024 很懒，啥也没写.
-keywords: Bootstrap,HTML,CSS,ionic,Angular,PHP,Node.js
-author: cool1024,www.cool1024.com
+keywords: Bootstrap,HTML,CSS,ionic,Angular,PHP,Node.js,Android
+author: COOL1024
 language: zh-cn
 timezone:
 avatar: https://avatars3.githubusercontent.com/u/20597070?s=400&u=441b3295b4b2066bed1b34da02446ae29c678395&v=4
@@ -104,4 +104,4 @@ archive_generator:
   monthly: false
   daily: false
 
-theme: anatole
+theme: hexo-theme-laughing

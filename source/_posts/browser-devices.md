@@ -1,7 +1,8 @@
 ---
 title: 几种浏览器能力记录
 date: 2019-04-22 17:21:12
-tags: 
+tags: html
+categories: Web前端
 ---
 
 #### 音频播放

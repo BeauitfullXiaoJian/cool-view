@@ -1,8 +1,12 @@
 ---
-title: jectpack-databinding-1 简单数据绑定
+title: JetPack-Databinding简单数据绑定(一)
 date: 2019-06-22 14:06:06
 tags: ['android','jetpack']
+categories: Android开发
 ---
+
+数据绑定库是一种支持库，借助该库，您可以使用声明性格式（而非程序化地）将布局中的界面组件绑定到应用中的数据源。
+<!--more-->
 
 ## 参考文档链接
 * 中文官方网站 https://developer.android.google.cn/topic/libraries/data-binding/start

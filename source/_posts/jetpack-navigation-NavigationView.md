@@ -1,8 +1,11 @@
 ---
-title: jetpack-navigation-NavigationView
+title: JetPack导航组件之抽屉导航
 date: 2019-05-25 17:04:34
 tags: ['android','jetpack']
+categories: Android开发
 ---
+
+<!--more-->
 
 ## Jetpack导航-侧边抽屉导航
 ![效果图](/images/jetpack/side-navigation.png)

@@ -5,6 +5,7 @@ tags: ["android","Image"]
 ---
 
 有时我们需要显示一张很大的图片，按常规的方式直接载入很容易出现OOM(out of  memory);这是由于Android系统对内存的使用有严格的限制（就那么点可怜的内存）
+<!-- more -->
 
 <div class="tip tip-info">为了维持多任务的功能环境，Android为每一个app都设置了一个硬性的heap size限制。准确的heap size限制会因为不同设备的不同RAM大小而各有差异。如果你的app已经到了heap的限制大小并且再尝试分配内存的话，会引起OutOfMemoryError的错误。
 </div>

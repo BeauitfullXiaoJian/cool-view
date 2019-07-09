@@ -1,9 +1,12 @@
 ---
-title: navigation-tablayout
+title: Android导航组件之TabLayout
 date: 2019-06-05 11:27:36
 tags: ['android','tablayout']
+categories: Android开发
 ---
 
+选项卡组织并允许在相关且处于相同层次结构的内容组之间进行导航。每个选项卡应包含与集合中其他选项卡不同的内容。例如，标签可以呈现新闻的不同部分，不同类型的音乐或不同的文档主题。
+<!--more-->
 
 ## TabLayout——使用TabLayout与ViewPager进行页面切换
 

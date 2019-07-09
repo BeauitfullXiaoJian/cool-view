@@ -1,16 +1,14 @@
 ---
-title: android-share-file
+title: Android共享文件
 date: 2019-06-30 19:05:35
-tags: ["android","file"]
+tags: ["android"]
+categories: Android开发
 ---
-
-##### 共享文件
-
-[参考文档](https://developer.android.com/training/secure-file-sharing)
 
 应用程序通常需要将一个或多个文件提供给另一个应用程序。例如，图库可能希望向图像编辑器提供文件，或者文件管理应用允许用户在外部存储区域之间复制和粘贴文件。
 
 在任何情况下，从您的应用程序向另一个应用程序提供文件的唯一安全方法是向接收应用程序发送文件的内容URI，并授予该URI的临时访问权限。具有临时URI访问权限的内容URI是安全的，因为它们仅适用于接收URI的应用程序，并且它们会自动过期。Android FileProvider组件提供了 getUriForFile()生成文件内容URI的方法。
+<!-- more -->
 
 注意：如果要在应用程序之间共享少量文本或数字数据，则应在发送的Intent中包含文本或数字数据即可。
 
@@ -64,3 +62,6 @@ val intent = Intent(Intent.ACTION_SEND).apply {
 }
 context.startActivity(Intent.createChooser(intent, "图片分享到"))
 ```
+
+#### 参考文档
+* https://developer.android.com/training/secure-file-sharing

@@ -2,11 +2,13 @@
 title: MySQL 8 Chapter 11 数据类型
 date: 2018-11-13 11:10:49
 tags: mysql
+categories: 数据库
 ---
 
 ### 11.2 数值类型
 
 MySQL支持所有的标准SQL数值数据类型。包括精确的类型（INTEGER，SMALLINT，DECIMAL 和 NUMERIC）,以及近似值（FLOAT，REAL和DOUBLE PRECISION）。关键词INT是INTEGER同义词，关键字DEC和FIXED是DECIMAL的同义词。MySQL将DOUBLE视为DOUBLE PRECISION（非标准扩展）的同义词。 除非启用REAL_AS_FLOAT SQL模式，否则MySQL还将REAL视为DOUBLE PRECISION（非标准变体）的同义词。
+<!--more-->
 
 BIT数据类型用于存储位值，并支持MyISAM，MEMORY，InnoDB和NDB表。 有关MySQL如何处理超出范围值到列和溢出的信息，请参见第11.2.6节“超出范围和溢出处理”。
 
