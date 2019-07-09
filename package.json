@@ -22,7 +22,10 @@
         "hexo-renderer-pug": "0.0.5",
         "hexo-renderer-stylus": "^0.3.1",
         "hexo-server": "^0.2.0",
+        "live2d-widget-model-hibiki": "^1.0.5",
         "live2d-widget-model-koharu": "^1.0.5",
+        "live2d-widget-model-nico": "^1.0.5",
+        "live2d-widget-model-wanko": "^1.0.5",
         "rxjs": "^6.3.3"
     }
 }
