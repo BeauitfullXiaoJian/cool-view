@@ -2,6 +2,7 @@
 title: Angular v6 国际化
 date: 2018-09-06 10:51:35
 tags: [i18n,Angular]
+categories: Web开发
 ---
 #### 给需要翻译的文件打上标记`i18n`
 我们这里选取的是app.component.html中的几个菜单,账号信息，系统设置，退出（我们给这个文字所属的标签都加上了i18n记号）

@@ -2,6 +2,7 @@
 title: 使用webpack构建一个简易的web项目
 date: 2018-11-21 15:46:26
 tags: webpack
+categories: Web开发
 ---
 
 #### 1.创建一个空的npm项目

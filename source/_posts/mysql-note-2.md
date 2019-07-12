@@ -2,6 +2,7 @@
 title: MySQL 8
 date: 2018-08-21 22:29:44
 tags: mysql
+categories: 数据库
 ---
 
 #### MySQL文档存储

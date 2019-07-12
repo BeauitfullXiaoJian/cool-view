@@ -2,6 +2,7 @@
 title: angular component note-3
 date: 2018-07-11 09:26:34
 tags: Angular
+categories: Web开发
 ---
 
 ##### 组件递归

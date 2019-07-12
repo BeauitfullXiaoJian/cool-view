@@ -2,6 +2,7 @@
 title: angular component note-2
 date: 2018-07-06 14:06:49
 tags: Angular
+categories: Web开发
 ---
 
 ##### 制作一个简单的开关组件

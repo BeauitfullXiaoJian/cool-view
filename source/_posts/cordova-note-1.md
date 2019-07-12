@@ -2,6 +2,7 @@
 title: Cordova环境配置
 date: 2018-08-31 15:17:04
 tags: ['cordova','node.js']
+categories: Web开发
 ---
 
 #### 环境要求

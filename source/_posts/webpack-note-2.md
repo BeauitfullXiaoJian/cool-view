@@ -2,12 +2,14 @@
 title: 使用SASS
 date: 2018-11-21 16:48:24
 tags: ['webpack','sass']
+categories: Web开发
 ---
 
 #### 概览
 [参考文档](http://sass.bootcss.com/docs/sass-reference/)
 
 Sass 是对 CSS 的扩展，让 CSS 语言更强大、优雅。 它允许你使用变量、嵌套规则、 mixins、导入等众多功能， 并且完全兼容 CSS 语法。 Sass 有助于保持大型样式表结构良好， 同时也让你能够快速开始小型项目， 特别是在搭配 Compass 样式库一同使用时。
+<!--more-->
 
 #### 特色
 

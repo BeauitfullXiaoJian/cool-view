@@ -2,6 +2,7 @@
 title: 使用request模拟浏览器请求
 date: 2018-08-08 17:19:17
 tags: node.js
+categories: Web开发
 ---
 #### 创建一个测试项目
 1. 创建项目目录

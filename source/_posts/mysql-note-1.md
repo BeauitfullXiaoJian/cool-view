@@ -2,6 +2,7 @@
 title: mysql基础配置
 date: 2018-08-13 11:44:30
 tags: mysql
+categories: 数据库
 ---
 
 #### MySQL  日常操作 (Linux) - 测试环境 Ubuntu 16.0.4 - 版本 mysql  Ver 14.14 Distrib 5.5.54
