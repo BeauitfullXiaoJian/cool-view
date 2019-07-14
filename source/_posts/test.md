@@ -1,7 +1,8 @@
 ---
-title: 测试
+title: 前端测试笔记（一）
 date: 2019-05-06 17:39:50
-tags:
+tags: ["JavaScript"]
+categories: Web开发
 ---
 
 ## 断言

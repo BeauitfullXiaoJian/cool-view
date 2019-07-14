@@ -1,7 +1,8 @@
 ---
-title: webgl
+title: WebGL
 date: 2019-04-25 18:09:36
-tags:
+tags: ["JavaScript"]
+categories: Web开发
 ---
 
 
@@ -12,3 +13,5 @@ WebGL 是一种 3D 绘图标准，这种绘图技术标准允许把 JavaScript �
 
 #### 参考库
 网址：https://threejs.org/
+
+#### 这是一个新坑，以后有时间要完成~~
