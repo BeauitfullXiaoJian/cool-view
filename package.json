@@ -3,8 +3,8 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "serve": "npx hexo serve",
-        "build": "npx hexo deploy"
+        "serve": "hexo serve",
+        "build": "hexo deploy"
     },
     "hexo": {
         "version": "3.7.1"
