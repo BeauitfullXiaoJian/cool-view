@@ -4,7 +4,7 @@
 使用hexo搭建的博客，运用了`hexo-cool-theme`主题。
 
 ## Install
-1. 安装`exo-cool-theme`主题
+1. 安装`hexo-cool-theme`主题
 `git clone https://github.com/cool1024/hexo-cool-theme.git themes/cool1024`
 2. 安装依赖
 npm i
