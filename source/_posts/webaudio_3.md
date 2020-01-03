@@ -5,7 +5,7 @@ tags: ['AudioContext','JavaScript']
 categories: WebAPI
 ---
 
-
+AudioContext提供了设配音频源的支持，配合MediaDevices提供的相关接口，我们可以获取麦克风音源，并进行相关操作。
 <!-- more -->
 
 ## 获取麦克风音源
