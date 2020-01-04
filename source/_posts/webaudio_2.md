@@ -45,8 +45,29 @@ categories: WebAPI
 const analyser = audioContext.createAnalyser();
 ```
 
-## 连接音频源和分析节点
-**AudioNode**提供了`connect`方法来连接其它节点，我们可以调用`audioSourceNode`的`connect`方法来连接`analyser`,
+## 连接音频源，分析节点，输出
+**AudioNode**提供了`connect`方法来连接其它节点，我们可以调用`audioSourceNode`的`connect`方法来连接`analyser`,最终我们把节点连接到默认输出节点`audioContext.destination`
 ```JavaScript
 audioSourceNode.connect(analyser).connect(audioContext.destination);
+```
+
+## 查看分析节点的音频数据
+**AnalyseNode**的成员变量`fftSize`一个无符号长整形的值，代表了用于计算频域信号时使用的 FFT (快速傅里叶变换) 的窗口大小。frequencyBinCount是一个无符号长整形的值, 值为fftSize的一半，通常等于将要用于可视化的数据值的数量。
+```JavaScript
+analyser.fftSize = 2048;
+anaylserData = new Uint8Array(this.analyser.frequencyBinCount);
+function showAnalyseData() {
+    analyser.getByteTimeDomainData(anaylserData);
+    console.log(anaylserData);
+}
+// 1000ms获取一次当前缓冲区数据
+setTimeout(showAnalyseData, 1000);
+```
+
+## 绘制音频图像
+getByteTimeDomainData方法把音频可视化数据(波形)导入到anaylserData数组中了，我们使用canvas画布把每一个点描绘出来即可。
+```JavaScript
+function displayAnalysData() {
+    
+}
 ```
