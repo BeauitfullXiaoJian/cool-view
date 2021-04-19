@@ -8,7 +8,9 @@ categories: Git
 Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。[点击查看菜鸟教程链接](https://www.runoob.com/git/git-tutorial.html)
 <!-- more -->
 
-# 项目初始化
+# 常用场景
+
+## 项目初始化
 
 ```bash
 # 本地文件夹初始化,并提交到远程仓库
@@ -24,7 +26,7 @@ git remote add origin https://github.com/xxxx/xxxx.git (添加远程仓库地址
 git push -u origin master (推送到指定仓库的master上)
 ```
 
-# 分支操作
+## 分支操作
 1. 从当前分支检出一个新的分支
 `git branch branchName`
 
@@ -40,7 +42,7 @@ git push -u origin master (推送到指定仓库的master上)
 5. 删除指定分支
 `git branch -d branchName`
 
-# 提交撤回
+## 提交撤回
 
 1. 删除上一次push操作（删除上次提交后本地和远程仓库的数据都将删除，所以删除上次提交前，记得备份备份备份数据）
 
@@ -68,7 +70,7 @@ git add 一个不该被添加的文件.jpg
 git reset HEAD 一个不该被添加的文件.jpg (执行后这个文件将从暂存区域移除)
 ```
 
-# 打上标签(TAG)
+## 打上标签(TAG)
 
 1. 列出已经用的Tag
 `git tag`
@@ -103,6 +105,34 @@ git tag -d Tag名称
 # 远程仓库删除
 git push origin :refs/tags/Tag名称
 ```
+
+## 将当前修改提交到指定分支
+```bash
+# 创建新分支
+git branch dev
+
+# 将工作区恢复到上次提交的内容，同时备份本地所做的修改
+git stash
+
+# 切换分支
+git checkout dev
+
+# 从 git 栈中获取到最近一次 stash 的内容，之后会删除栈中对应的 stash
+git stash pop
+
+# 添加所有（已修改）文件
+git add .
+
+# 添加到本地仓库
+git commit -m "xxxx"
+
+# 获取
+git pull origin 远程名称
+
+# 推送
+git push origin 远程名称
+```
+
 # 配置文件
 
 1. 打开全局配置文件
@@ -114,3 +144,6 @@ git push origin :refs/tags/Tag名称
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
+
+# SSH KEY
+ssh-keygen -t rsa -C "example@mail.com"
